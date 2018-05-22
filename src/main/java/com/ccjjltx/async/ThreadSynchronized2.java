@@ -2,7 +2,7 @@ package com.ccjjltx.async;
 
 /**
  * synchronized
- * 线程的互斥问题
+ * 线程的互斥问题：两两互斥，不可超过两个
  *
  * @author ccj
  * @version 1.0
