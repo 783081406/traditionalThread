@@ -1,4 +1,4 @@
-package com.ccjjltx.example1;
+package com.ccjjltx.async;
 
 /**
  * synchronized

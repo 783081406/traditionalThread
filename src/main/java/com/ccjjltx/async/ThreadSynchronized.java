@@ -1,4 +1,4 @@
-package com.ccjjltx.example1;
+package com.ccjjltx.async;
 
 /**
  * synchronized
@@ -7,10 +7,10 @@ package com.ccjjltx.example1;
  * @version 1.0
  * @since 1.8
  */
-public class ThreadSynchronized1 {
+public class ThreadSynchronized {
 
     public static void main(String[] args) {
-        Outputer outputer = new ThreadSynchronized1().new Outputer();
+        Outputer outputer = new ThreadSynchronized().new Outputer();
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -20,7 +20,7 @@ public class ThreadSynchronized1 {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    outputer.output1("cccc");
+                    outputer.output("ccj");
                 }
             }
         }).start();
@@ -33,14 +33,14 @@ public class ThreadSynchronized1 {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    outputer.output2("jjjj");
+                    outputer.output("jltx");
                 }
             }
         }).start();
     }
 
     class Outputer {
-        public void output1(String name) {
+        public void output(String name) {
             int len = name.length();
             synchronized (this) {
                 for (int i = 0; i < len; i++) {
@@ -48,14 +48,6 @@ public class ThreadSynchronized1 {
                 }
                 System.out.println();
             }
-        }
-
-        public synchronized void output2(String name) {
-            int len = name.length();
-            for (int i = 0; i < len; i++) {
-                System.out.print(name.charAt(i));
-            }
-            System.out.println();
         }
     }
 }
